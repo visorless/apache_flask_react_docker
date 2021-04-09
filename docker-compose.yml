@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+    frontend:
+        container_name: artemisFront
+        restart: always
+        build:
+            context: ./frontend
+        volumes:
+            - ./frontend/:/frontend
+            - /frontend/node_modules
+    backend:
+        container_name: artemisBack
+        restart: always
+        build:
+            context: ./backend
+        

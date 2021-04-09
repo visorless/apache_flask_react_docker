@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+    backend:
+        build:
+            dockerfile: Dockerfile
+        ports:
+            - "8080:80"
+        volumes:
+            - ./backend/front:/usr/local/apache2/htdocs

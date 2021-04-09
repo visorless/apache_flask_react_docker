@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+    frontend:
+        build:
+            dockerfile: Dockerfile-dev
+        ports:
+          - "3000:3000"
+        links:
+          - backend
+        environment:
+            - NODE_ENV=development
+            - CHOKIDAR_USEPOLLING=true
+    backend:
+        build:
+            dockerfile: Dockerfile-dev
+        environment:
+            - FLASK_ENV=docker
+        expose:
+            - 5000
+        ports:
+            - "5000:5000"
+        volumes:
+            - ./backend:/backend

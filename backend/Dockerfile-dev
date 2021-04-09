@@ -1,0 +1,16 @@
+FROM python:latest
+
+WORKDIR /backend/api
+
+COPY ./api/requirements.txt /backend/
+
+RUN pip install -r /backend/requirements.txt
+
+COPY ./api /backend
+
+EXPOSE 5000
+
+ENV FLASK_ENV=docker
+ENV FLASK_APP=app
+ENTRYPOINT ["python"]
+CMD ["app.py"]
