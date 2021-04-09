@@ -12,3 +12,5 @@ The development environment relies of Create-React-App and Flask development ser
 The production environment builds the production ready version of Create React App, then deploys it into an Apache container that runs the Flask application with mod_wsgi-express over port 8080. 
 
 Port 8080 can be easily changed in the docker-compose file when you are ready to move these containers into your actual production environment.
+
+Since this uses Create-React-App inside of Docker, there is no intial setup necessary. Simply clone this repo, then run run_all-build.cmd to start the development environment. Once the dev servers are running, any changes in those servers while be hotreloaded into the docker containers.
